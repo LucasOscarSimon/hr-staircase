@@ -1,31 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Staircase
+class Solution
 {
-    class Program
+    static void Main(String[] args)
     {
-        static void Main(string[] args)
+        int N = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= N; ++i)
         {
-            StringBuilder builder = new StringBuilder();
-            int totalNumberOfSteps = Convert.ToInt32(Console.ReadLine());
-            var cont = 0;
-            for (int stp = totalNumberOfSteps - 1; stp >= 0; stp--)
-            {
-                builder.Append(' ', stp);
-                cont++;
-                if (builder.Length == stp)
-                    builder.Append('#',cont);
-                else
-                    builder.Append('#', cont);
-                builder.AppendLine();
-            }
-            
-            Console.Write(builder);
-            Console.ReadLine();
+            string output = new string(' ', N - i) + new string('#', i);
+            Console.WriteLine(output);
         }
+        Console.ReadLine();
     }
 }
